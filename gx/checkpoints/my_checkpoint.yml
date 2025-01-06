@@ -1,0 +1,9 @@
+name: my_checkpoint
+config_version: 1.0
+class_name: Checkpoint
+validations:
+  - batch_request:
+      datasource_name: my_pandas_datasource
+      data_connector_name: default_inferred_data_connector_name
+      data_asset_name: temp_dataset.csv
+    expectation_suite_name: my_suite

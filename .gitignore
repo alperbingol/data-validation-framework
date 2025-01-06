@@ -1,4 +1,12 @@
+# Ignore Python cache and virtual environment
 env/
 __pycache__/
 *.pyc
+
 .DS_Store
+
+# Ignore Great Expectations uncommitted files
+gx/uncommitted/
+
+# Ignore local datasets
+data/
