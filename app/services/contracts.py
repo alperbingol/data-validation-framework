@@ -11,8 +11,11 @@ def save_contract(contract_name: str, contract_data: dict):
 
 def load_contract(contract_name: str) -> dict:
     """Load a contract from a file."""
-    with open(CONTRACTS_DIR / f"{contract_name}.json", "r") as file:
-        return json.load(file)
+    try:
+        with open(CONTRACTS_DIR / f"{contract_name}.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Contract '{contract_name}.json' not found in {CONTRACTS_DIR}.")
 
 def list_contracts() -> list:
     """List all available contracts."""
